@@ -20,6 +20,11 @@ namespace Shadow::System::Dialogs {
 		dialog->base.soundThread = 0x10;
 	}
 
+/**
+  * Print a message using system dialogue.
+  *
+  * @param message - Desired message.
+**/
 	void ShowMessage(const char* message)
 	{
 		ConfigureDialog(&dialog, sizeof(dialog));
@@ -53,7 +58,9 @@ namespace Shadow::System::Dialogs {
 			g_RenderManager.EndDialog();
 		}
 	}
-
+/**
+  * Whether or not the system should print network information.
+**/
 	bool ShowNetworkDialog()
 	{
 		bool done = true;
