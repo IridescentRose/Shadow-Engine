@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{B6EF77A9-3167-4034-8657-80617CCFFCA0}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakeBuildCommandLine>build.bat</NMakeBuildCommandLine>
+    <NMakeOutput>Shadow.exe</NMakeOutput>
+    <NMakeCleanCommandLine>clean.bat</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>rebuild.bat</NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <NMakeBuildCommandLine>build.bat</NMakeBuildCommandLine>
+    <NMakeOutput>Shadow.exe</NMakeOutput>
+    <NMakeCleanCommandLine>clean.bat</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>rebuild.bat</NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakeBuildCommandLine>build.bat</NMakeBuildCommandLine>
+    <NMakeOutput>Shadow.exe</NMakeOutput>
+    <NMakeCleanCommandLine>clean.bat</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>rebuild.bat</NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>WIN32;NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <NMakeBuildCommandLine>build.bat</NMakeBuildCommandLine>
+    <NMakeOutput>Shadow.exe</NMakeOutput>
+    <NMakeCleanCommandLine>clean.bat</NMakeCleanCommandLine>
+    <NMakeReBuildCommandLine>rebuild.bat</NMakeReBuildCommandLine>
+    <NMakePreprocessorDefinitions>NDEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Audio\sound_utils\audio.c" />
+    <ClCompile Include="Audio\sound_utils\bgm.c" />
+    <ClCompile Include="Audio\sound_utils\media.c" />
+    <ClCompile Include="Audio\sound_utils\pgeWav.c" />
+    <ClCompile Include="Audio\sound_utils\vfsFile.c" />
+    <ClCompile Include="Audio\sound_utils\VirtualFile.c" />
+    <ClCompile Include="Graphics\Frustum.cpp" />
+    <ClCompile Include="Graphics\RenderManager.cpp" />
+    <ClCompile Include="Graphics\Sprite.cpp" />
+    <ClCompile Include="Graphics\TextureUtil.cpp" />
+    <ClCompile Include="System\Dialogs.cpp" />
+    <ClCompile Include="System\Input.cpp" />
+    <ClCompile Include="System\NetworkDriver.cpp" />
+    <ClCompile Include="System\Ram.cpp" />
+    <ClCompile Include="Utils\common.c" />
+    <ClCompile Include="Utils\StateManager.cpp" />
+    <ClCompile Include="Utils\Timer.cpp" />
+    <ClCompile Include="Graphics\vram.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Audio\sound_utils\audio.h" />
+    <ClInclude Include="Audio\sound_utils\bgm.h" />
+    <ClInclude Include="Audio\sound_utils\oslib.h" />
+    <ClInclude Include="Audio\sound_utils\pgeWav.h" />
+    <ClInclude Include="Audio\sound_utils\readwav.h" />
+    <ClInclude Include="Audio\sound_utils\VirtualFile.h" />
+    <ClInclude Include="Graphics\Frustum.h" />
+    <ClInclude Include="Graphics\RenderManager.h" />
+    <ClInclude Include="Graphics\Sprite.h" />
+    <ClInclude Include="Graphics\Texture.h" />
+    <ClInclude Include="Graphics\TextureUtil.h" />
+    <ClInclude Include="Graphics\Vertex.h" />
+    <ClInclude Include="Physics\AABB.h" />
+    <ClInclude Include="System\Dialogs.h" />
+    <ClInclude Include="System\Input.h" />
+    <ClInclude Include="System\NetworkDriver.h" />
+    <ClInclude Include="System\Ram.h" />
+    <ClInclude Include="Utils\common.h" />
+    <ClInclude Include="Utils\GameState.h" />
+    <ClInclude Include="Utils\StateManager.h" />
+    <ClInclude Include="Utils\Timer.hpp" />
+    <ClInclude Include="Graphics\vram.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
