@@ -1,13 +1,8 @@
 #pragma once
 
 #include <stdarg.h>
-
-#include <Shadow/Utils/vram.h>
-#include <Shadow/Utils/vram.h>
-#include <Shadow/Utils/common.h>
-
-#include <Shadow/Graphics/Vertex.h>
-#include <Shadow/Graphics/TextureUtil.h>
+#include <Graphics/Vertex.h>
+#include <Graphics/TextureUtil.h>
 
 #include <intraFont.h>
 
@@ -46,38 +41,25 @@ namespace Shadow
 			
 			void SetFontStyle(float size, unsigned int color, unsigned int shadowColor, unsigned int options, float angle);
 			void DebugPrint(int x,int y, const char *message, ...);
-			void Start();
 			void CleanBuffers();
 			void DrawCube(float x, float y, float z);
 
 
-			void StartFrame(float a, float b, float c);
+			void StartFrame();
 			void EndFrame();
 
 			//dialogs rendering
 			void StartDialog();
 			void EndDialog();
 
-			void UseVerticalSync(bool Enabled);
 			void SetClearColor(float r,float g,float b,float a);
 
 			void SetOrtho();
 			void SetPerspective(float _fov,float _aspect,float _znear,float _zfar);
 			
 			void DrawToTexture(Texture* offscreenTexture );
-			void SetRTT();
-
-
-			void UpdateFrustumMatrix();
 
 			void SetClearColour(unsigned int color);
-
-			int GetCpuUsage() {return g_cpu_load;}
-			int GetGpuUsage() {return g_gpu_load;}
-			void CollectPerformance(bool state){performanceCounter = state; }
-
-			
-			int defaultFontType;
 
 
 			protected:

@@ -6,7 +6,9 @@
 #include <string.h>
 #define RAM_BLOCK      (1024 * 1024)
 
-namespace Shadow::System {
-	u32 ramAvailableMax(void);
-	u32 freeMemory(void);
+namespace Shadow {
+	namespace System {
+		u32 ramAvailableMax(void);
+		u32 freeMemory(void);
+	}
 }

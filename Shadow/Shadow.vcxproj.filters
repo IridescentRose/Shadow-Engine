@@ -260,5 +260,8 @@
     <ClInclude Include="include\Audio\AudioClip.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\Shadow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

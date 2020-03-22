@@ -158,6 +158,7 @@
     <ClInclude Include="include\Graphics\TextureUtil.h" />
     <ClInclude Include="include\Graphics\Vertex.h" />
     <ClInclude Include="include\Graphics\vram.h" />
+    <ClInclude Include="include\Shadow.h" />
     <ClInclude Include="include\System\Dialogs.h" />
     <ClInclude Include="include\System\Input.h" />
     <ClInclude Include="include\System\NetworkDriver.h" />

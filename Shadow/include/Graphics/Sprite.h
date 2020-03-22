@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
-#include <Shadow/Graphics/Vertex.h>
-#include <Shadow/Graphics/Texture.h>
+#include <Graphics/Vertex.h>
+#include <Graphics/Texture.h>
 namespace Shadow
 {
 	namespace Graphics

@@ -10,12 +10,20 @@ src/Audio/sound_utils/pgeWav.o \
 src/Audio/sound_utils/vfsFile.o \
 src/Audio/sound_utils/VirtualFile.o \
 src/Audio/AudioClip.o \
+src/System/Ram.o \
+src/System/Input.o \
+src/Graphics/vram.o \
+src/Graphics/RenderManager.o \
+src/Graphics/TextureUtil.o \
+src/Graphics/Sprite.o \
+src/System/Dialogs.o \
+src/System/NetworkDriver.o \
 
 alib = lib/libshadow.a
 
 INCDIR = $(PSPPATH)/include
 INCDIR += ./include ./libs/include
-CFLAGS = -O3 -g3 -mpreferred-stack-boundary=4 -ffast-math  -gdwarf-2
+CFLAGS = -O3 -g3 -mpreferred-stack-boundary=4 -ffast-math -gdwarf-2
 CXXFLAGS = -std=gnu++17 -fno-rtti -fno-exceptions
 ASFLAGS = $(CFLAGS)
 
@@ -25,7 +33,7 @@ PSP_LARGE_MEMORY = 0
 
 LIBDIR += ./libs/lib/
 LDFLAGS =
-LIBS=-lpng -lpspaudiolib -lpspaudio -lpspaudiocodec -lz -lpspgum -lpspgu -lstdc++ -lpsprtc -lpspctrl -lm -lpspvfpu -lpspsdk -lpsppower -lpsphttp -lpspmath  #Intrafont, PNG, Zlib, JSON, etc.
+LIBS=-lpng -lintraFont -lpspaudiolib -lpspaudio -lpspaudiocodec -lz -lpspgum -lpspgu -lstdc++ -lpsprtc -lpspctrl -lm -lpspvfpu -lpspsdk -lpsppower -lpsphttp -lpspmath  #Intrafont, PNG, Zlib, JSON, etc.
 
 $(alib): $(OBJS)
 	$(AR) rcs $@ $^

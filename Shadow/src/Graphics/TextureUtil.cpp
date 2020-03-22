@@ -1,6 +1,8 @@
-#include "TextureUtil.h"
+#include <Graphics/TextureUtil.h>
 #include <pspkernel.h>
-#include <Shadow/Utils/Logger.h>
+#include <Utils/Logger.h>
+#include <Graphics/vram.h>
+
 using namespace Shadow::Utils;
 
 bool FileExist(std::string fileName)
@@ -28,7 +30,7 @@ std::vector<std::string> texPacksDisabled;
 Texture* TextureUtil::LoadPngTexturePack(std::string filename, bool vram) {
 	Texture* tex = NULL;
 	for (int i = 0; i < texPacksEnabled.size(); i++) {
-		Logging::trace("ATTEMPTING LOAD AT: " + std::string("resourcepacks/") + texPacksEnabled[i] + "/assets/minecraft/textures/" + filename);
+		g_Logger->log("ATTEMPTING LOAD AT: " + std::string("resourcepacks/") + texPacksEnabled[i] + "/assets/minecraft/textures/" + filename);
 		tex = LoadPng("resourcepacks/" + texPacksEnabled[i] + "/assets/minecraft/textures/" + filename, vram);
 		if (tex != NULL) {
 			return tex;
@@ -36,11 +38,11 @@ Texture* TextureUtil::LoadPngTexturePack(std::string filename, bool vram) {
 	}
 
 
-	Logging::trace("assets/minecraft/textures/" + filename);
+	g_Logger->log("assets/minecraft/textures/" + filename);
 	tex = LoadPng("assets/minecraft/textures/" + filename, vram);
 
 	if(tex == NULL)
-		Logging::error("COULDN'T LOAD: " + filename );
+		g_Logger->log("COULDN'T LOAD: " + filename );
 
 	return tex;
 }

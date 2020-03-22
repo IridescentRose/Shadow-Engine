@@ -1,5 +1,5 @@
-#include <Shadow/Graphics/Sprite.h>
-#include <Shadow/Graphics/TextureUtil.h>
+#include <Graphics/Sprite.h>
+#include <Graphics/TextureUtil.h>
 
 namespace Shadow
 {

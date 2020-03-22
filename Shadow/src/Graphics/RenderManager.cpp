@@ -1,4 +1,5 @@
-#include <Shadow/Graphics/RenderManager.h>
+#include <Graphics/RenderManager.h>
+#include <Graphics/vram.h>
 
 namespace Shadow
 {
@@ -18,7 +19,6 @@ namespace Shadow
 
 		    fontVerticalShift = 3;
 		    fontType = 0;
-		    defaultFontType = 1;
 
 			mVerticalSync = false;
 			listNum = 0;
@@ -89,12 +89,12 @@ namespace Shadow
 		void RenderManager::InitDebugFont()
 		{
 			intraFontInit();
-			defFont = intraFontLoad("./assets/font/font.pgf", INTRAFONT_STRING_UTF8 | INTRAFONT_CACHE_LARGE);
-			debugFont = intraFontLoad("./assets/font/ltn8.pgf",INTRAFONT_STRING_UTF8|INTRAFONT_CACHE_LARGE);	
-			jpn0 = intraFontLoad("./assets/font/jpn0.pgf",INTRAFONT_STRING_UTF8|INTRAFONT_CACHE_LARGE);
-  			kr0 = intraFontLoad("./assets/font/kr0.pgf",INTRAFONT_STRING_UTF8|INTRAFONT_CACHE_LARGE);  //Korean font (not available on all systems) with UTF-8 encoding
-			arib = intraFontLoad("./assets/font/arib.pgf",INTRAFONT_STRING_UTF8|INTRAFONT_CACHE_LARGE);                     //Symbols (not available on all systems)
-  			chn = intraFontLoad("./assets/font/gb3s1518.bwfon",INTRAFONT_STRING_UTF8|INTRAFONT_CACHE_LARGE);               //chinese font
+			defFont = intraFontLoad("flash0:/font/font.pgf", INTRAFONT_STRING_UTF8 | INTRAFONT_CACHE_LARGE);
+			debugFont = intraFontLoad("flash0:/font/ltn8.pgf",INTRAFONT_STRING_UTF8|INTRAFONT_CACHE_LARGE);	
+			jpn0 = intraFontLoad("flash0:/font/jpn0.pgf",INTRAFONT_STRING_UTF8|INTRAFONT_CACHE_LARGE);
+  			kr0 = intraFontLoad("flash0:/font/kr0.pgf",INTRAFONT_STRING_UTF8|INTRAFONT_CACHE_LARGE);  //Korean font (not available on all systems) with UTF-8 encoding
+			arib = intraFontLoad("flash0:/font/arib.pgf",INTRAFONT_STRING_UTF8|INTRAFONT_CACHE_LARGE);                     //Symbols (not available on all systems)
+  			chn = intraFontLoad("flash0:/font/gb3s1518.bwfon",INTRAFONT_STRING_UTF8|INTRAFONT_CACHE_LARGE);               //chinese font
  			
 			intraFontSetStyle(debugFont,0.5f,0xFFFFFFFF,0, 0.0f, INTRAFONT_ALIGN_CENTER);
 			intraFontSetStyle(jpn0,0.5f,0xFFFFFFFF,0, 0.0f, INTRAFONT_ALIGN_CENTER);
@@ -147,10 +147,6 @@ namespace Shadow
 			sceGuDisable(GU_TEXTURE_2D);
 		}
 
-		void RenderManager::Start()
-		{
-			sceGuStart(GU_DIRECT,list);
-		}
 
 		void RenderManager::CleanBuffers()
 		{
@@ -160,24 +156,10 @@ namespace Shadow
 			sceGuClear(GU_COLOR_BUFFER_BIT | GU_STENCIL_BUFFER_BIT | GU_DEPTH_BUFFER_BIT);
 		}
 
-		void RenderManager::StartFrame(float a, float b, float c)
+		void RenderManager::StartFrame()
 		{
 			sceGuStart(GU_DIRECT,list);
-
-            if(a > 1.0f)
-            {
-                a = 1.0f;
-            }
-            if(b > 1.0f)
-            {
-                b = 1.0f;
-            }
-            if(c > 1.0f)
-            {
-                c = 1.0f;
-            }
-
-            sceGuClearColor(GU_COLOR(a,b,c,1.0));
+            sceGuClearColor(cleanColor);
 			sceGuClearStencil(0);
 			sceGuClearDepth(0);
 			sceGuClear(GU_COLOR_BUFFER_BIT | GU_STENCIL_BUFFER_BIT | GU_DEPTH_BUFFER_BIT);
@@ -237,11 +219,6 @@ namespace Shadow
 			sceDisplayWaitVblankStart();
 			sceGuSwapBuffers();
 		}
-		
-		void RenderManager::UseVerticalSync(bool Enabled)
-		{
-			mVerticalSync = Enabled;
-		}
 
 		void RenderManager::SetClearColor(float r,float g,float b,float a)
 		{
@@ -297,25 +274,6 @@ namespace Shadow
 			sceGuViewport(2048,2048,offscreenTexture->width,offscreenTexture->height);
 
 			//CleanBuffers();
-		}
-
-		void RenderManager::SetRTT()
-		{
-			// set frame buffer
-			sceGuDrawBufferList(GU_PSM_8888,_fbp0,BUF_WIDTH);
-
-			// setup viewport
-			sceGuOffset(2048 - (SCR_WIDTH/2),2048 - (SCR_HEIGHT/2));
-			sceGuViewport(2048,2048,SCR_WIDTH,SCR_HEIGHT);
-
-			CleanBuffers();
-		}
-
-
-
-		void RenderManager::UpdateFrustumMatrix()
-		{
-			gumMultMatrix(&projection_view_matrix,&proj,&view);
 		}
 
 		void RenderManager::SetClearColour(unsigned int color)

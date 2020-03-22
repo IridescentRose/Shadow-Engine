@@ -19,11 +19,15 @@
 #include <unistd.h> 
 #include <queue>
 
-namespace Shadow::System::Network {
-	void Init();
+namespace Shadow {
+	namespace System {
+		namespace Network {
+			void Init();
 
-	bool autoConnect();
-	bool dialogConnect();
+			bool autoConnect();
+			bool dialogConnect();
 
-	void Cleanup();
+			void Cleanup();
+		}
+	}
 }
