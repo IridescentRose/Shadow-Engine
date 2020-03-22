@@ -17,6 +17,12 @@ bool FileExist(std::string fileName)
 	return true;
 }
 
+/**
+  * Load a PNG image.
+  *
+  * @param fileName - File name for the image.
+  * @param vram - (Boolean) Whether to store in VRAM or main RAM.
+**/
 Texture* TextureUtil::LoadPng(std::string fileName, bool vram)
 {
 	return LoadPng(fileName.c_str(), GU_PSM_8888, 1, vram);
@@ -25,6 +31,12 @@ Texture* TextureUtil::LoadPng(std::string fileName, bool vram)
 std::vector<std::string> texPacksEnabled;
 std::vector<std::string> texPacksDisabled;
 
+/**
+  * Load a PNG texture pack. (For Minecraft)
+  *
+  * @param filename - File name for the pack.
+  * @param vram - (Boolean) Whether to store in VRAM or main RAM.
+**/
 Texture* TextureUtil::LoadPngTexturePack(std::string filename, bool vram) {
 	Texture* tex = NULL;
 	for (int i = 0; i < texPacksEnabled.size(); i++) {
@@ -45,6 +57,14 @@ Texture* TextureUtil::LoadPngTexturePack(std::string filename, bool vram) {
 	return tex;
 }
 Texture* terrain_atlas;
+/**
+  * Load a PNG texture.
+  *
+  * @param filename - File name for the texture.
+  * @param ColorMode - Image colour depth. (GU_PSM_XXXX)
+  * @param Swizzle - Swizzle control. (swizzled = Swizzle;)
+  * @param vram - (Boolean) Whether to store in VRAM or main RAM.
+**/
 Texture* TextureUtil::LoadPng(const char* filename, int ColorMode, int Swizzle, bool Vram)
 {
 	unsigned short *Buffer;
