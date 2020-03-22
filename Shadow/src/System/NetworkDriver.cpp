@@ -2,6 +2,9 @@
 #include "Dialogs.h"
 
 namespace Shadow::System::Network {
+/**
+  * Initialise network modules.
+**/
 	void Init() {
 		//We need to load some basic kernel modules in order to use networking features
 
@@ -54,6 +57,9 @@ namespace Shadow::System::Network {
 		return Dialogs::ShowNetworkDialog();
 	}
 
+/**
+  * Unload modules and clean up.
+**/
 	void Cleanup() {
 		
 		//NET
