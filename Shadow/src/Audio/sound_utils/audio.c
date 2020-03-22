@@ -11,8 +11,8 @@
 	#include <pspthreadman.h>
 	#include <pspaudio.h>
 
-#include "oslib.h"
-#include "audio.h"
+#include <Audio/sound_utils/audio.h>
+#include <Audio/sound_utils/oslib.h>
 
 /*
 	*************************
@@ -272,8 +272,7 @@ int oslGetSoundChannel(OSL_SOUND *s)		{
 }
 
 // ------------------------------------------
-
-#include "readwav.h"
+#include <Audio/sound_utils/readwav.h>
 
 void oslDecodeWav(unsigned int i, void* buf, unsigned int length)		{
 	unsigned int j, k, samples=1<<(osl_audioVoices[i].divider);

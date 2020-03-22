@@ -3,13 +3,20 @@ OBJS = src/Utils/common.o \
 src/Utils/Timer.o \
 src/Utils/StateManager.o \
 src/Utils/Logger.o \
+src/Audio/sound_utils/audio.o \
+src/Audio/sound_utils/bgm.o \
+src/Audio/sound_utils/media.o \
+src/Audio/sound_utils/pgeWav.o \
+src/Audio/sound_utils/vfsFile.o \
+src/Audio/sound_utils/VirtualFile.o \
+src/Audio/AudioClip.o \
 
 alib = lib/libshadow.a
 
 INCDIR = $(PSPPATH)/include
 INCDIR += ./include ./libs/include
-CFLAGS = -O3 -g3 -mpreferred-stack-boundary=4 -ffast-math -fno-rtti -fno-exceptions -gdwarf-2
-CXXFLAGS = -std=gnu++17
+CFLAGS = -O3 -g3 -mpreferred-stack-boundary=4 -ffast-math  -gdwarf-2
+CXXFLAGS = -std=gnu++17 -fno-rtti -fno-exceptions
 ASFLAGS = $(CFLAGS)
 
 BUILD_PRX = 1

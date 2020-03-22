@@ -4,7 +4,8 @@
 #include <malloc.h>
 #include <pspiofilemgr.h>
 #include <pspthreadman.h>
-#include "pgeWav.h"
+
+#include <Audio/sound_utils/pgeWav.h>
 
 #define PGE_WAV_MAX_SLOTS 16
 

@@ -104,6 +104,7 @@
     <ClCompile Include="Graphics\RenderManager.cpp" />
     <ClCompile Include="Graphics\Sprite.cpp" />
     <ClCompile Include="Graphics\TextureUtil.cpp" />
+    <ClCompile Include="src\Audio\AudioClip.cpp" />
     <ClCompile Include="src\Audio\sound_utils\audio.c" />
     <ClCompile Include="src\Audio\sound_utils\bgm.c" />
     <ClCompile Include="src\Audio\sound_utils\media.c" />
@@ -144,6 +145,7 @@
     <ClInclude Include="Graphics\Texture.h" />
     <ClInclude Include="Graphics\TextureUtil.h" />
     <ClInclude Include="Graphics\Vertex.h" />
+    <ClInclude Include="include\Audio\AudioClip.h" />
     <ClInclude Include="include\Audio\sound_utils\audio.h" />
     <ClInclude Include="include\Audio\sound_utils\bgm.h" />
     <ClInclude Include="include\Audio\sound_utils\oslib.h" />

@@ -1,4 +1,4 @@
-.PHONY: all build_libs build_game clean_libs clean_game clean_all clean
+.PHONY: all build_libs build_game clean_game clean_all clean
 
 all: build_game
 clean_all: clean_game
@@ -8,11 +8,7 @@ build_lib:
 	make -f MakefileLib
 	
 build_game:
-	make -f MakefileGame all
-	
-clean_libs:
-	make -C 3libs/noisepp -f Makefile clean
-	make -C 3libs/libpspmath -f Makefile clean
+	make -f MakefileLib all
 	
 clean_game:
-	make -f MakefileGame clean
+	make -f MakefileLib clean

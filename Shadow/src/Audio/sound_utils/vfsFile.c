@@ -1,4 +1,4 @@
-#include "oslib.h"
+#include <Audio/sound_utils/oslib.h>
 
 /*
 	SOURCE VFS: file
