@@ -8,7 +8,9 @@ namespace Shadow
         void RenderManager::DrawCube(float x, float y, float z)
         {
         }
-
+/**
+  * Initialise graphics engine.
+**/
 		void RenderManager::Init()
 		{
 
@@ -86,6 +88,9 @@ namespace Shadow
 			sceGuShadeModel(GU_SMOOTH);
 		}
 
+/**
+  * Enable debug fonts.
+**/
 		void RenderManager::InitDebugFont()
 		{
 			intraFontInit();
@@ -130,7 +135,13 @@ namespace Shadow
 		sceGuColor(GU_COLOR(1,1,1,1.0f));
 
 		}
-
+/**
+  * Print a debug message.
+  *
+  * @param x 	   - x position.
+  * @param y 	   - y position.
+  * @param message - debug text.
+**/
 		void RenderManager::DebugPrint(int x,int y, const char *message, ...)
 		{
 			va_list argList;
@@ -146,12 +157,16 @@ namespace Shadow
 			sceGuDisable(GU_BLEND);
 			sceGuDisable(GU_TEXTURE_2D);
 		}
-
+/**
+  * Initialise GPU.
+**/
 		void RenderManager::Start()
 		{
 			sceGuStart(GU_DIRECT,list);
 		}
-
+/**
+  * Clear all buffers.
+**/
 		void RenderManager::CleanBuffers()
 		{
 			sceGuClearColor(cleanColor);
@@ -176,7 +191,11 @@ namespace Shadow
             {
                 c = 1.0f;
             }
-
+/**
+  * Clear the screen to a given colour.
+  *
+  * @param a, b, c - RGB value of desired colour.
+**/
             sceGuClearColor(GU_COLOR(a,b,c,1.0));
 			sceGuClearStencil(0);
 			sceGuClearDepth(0);
@@ -185,7 +204,9 @@ namespace Shadow
 			
 			sceGuShadeModel(GU_SMOOTH);
 		}
-
+/**
+  * Finish rendering and synchronise the frame.
+**/
 		void RenderManager::EndFrame()
 		{
 			if(!performanceCounter)
@@ -237,12 +258,19 @@ namespace Shadow
 			sceDisplayWaitVblankStart();
 			sceGuSwapBuffers();
 		}
-		
+/**
+  * Enable or disable V-sync.
+**/		
 		void RenderManager::UseVerticalSync(bool Enabled)
 		{
 			mVerticalSync = Enabled;
 		}
-
+/**
+  * Set colour for clearing the screen,
+  *
+  * @param r, g, b - Desired colour
+  * @param a - Alpha value
+**/
 		void RenderManager::SetClearColor(float r,float g,float b,float a)
 		{
 			cleanColor = GU_COLOR(r,g,b,a);
@@ -286,7 +314,9 @@ namespace Shadow
 		}
 
 
-
+/**
+  * Render the scene to a texture.
+**/
 		void  RenderManager::DrawToTexture(Texture* offscreenTexture )
 		{
 			//draw to texture
@@ -317,7 +347,11 @@ namespace Shadow
 		{
 			gumMultMatrix(&projection_view_matrix,&proj,&view);
 		}
-
+/**
+  * Set desired colour for clearing the screen.
+  *
+  * @param color - Desired colour.
+**/
 		void RenderManager::SetClearColour(unsigned int color)
 		{
 			cleanColor = color;
