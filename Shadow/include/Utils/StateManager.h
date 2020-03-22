@@ -23,5 +23,7 @@ namespace Shadow
 		private:
 			std::vector<GameState*> states;
 		};
+
+		extern StateManager g_StateManager;
 	}
 }

@@ -1,5 +1,8 @@
 TARGET = Shadow
-OBJS = 
+OBJS = src/Utils/common.o \
+src/Utils/Timer.o \
+src/Utils/StateManager.o \
+src/Utils/Logger.o \
 
 alib = lib/libshadow.a
 

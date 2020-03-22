@@ -6,8 +6,8 @@
 #include <pspdisplay.h>
 
 //gamestate/engine includes
-#include <Shadow/Utils/StateManager.h>
-#include <Shadow/Utils/GameState.h>
+#include <Utils/StateManager.h>
+#include <Utils/GameState.h>
 
 namespace Shadow
 {
@@ -62,6 +62,8 @@ namespace Shadow
 		{
 			states.back()->Draw(this);
 		}
+
+		StateManager g_StateManager;
 
 	}
 }

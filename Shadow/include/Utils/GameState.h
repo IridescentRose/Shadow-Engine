@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Shadow/Utils/StateManager.h>
+#include <Utils/StateManager.h>
 
 namespace Shadow
 {

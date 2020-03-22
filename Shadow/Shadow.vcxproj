@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -68,6 +68,7 @@
     <NMakeCleanCommandLine>clean.bat</NMakeCleanCommandLine>
     <NMakeReBuildCommandLine>rebuild.bat</NMakeReBuildCommandLine>
     <NMakePreprocessorDefinitions>WIN32;_DEBUG;$(NMakePreprocessorDefinitions)</NMakePreprocessorDefinitions>
+    <IncludePath>C:\pspsdk\psp\sdk\include;C:\pspsdk\psp\include;C:\Users\Iride\Desktop\Shadow-Engine\Shadow\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <NMakeBuildCommandLine>build.bat</NMakeBuildCommandLine>
@@ -103,6 +104,24 @@
     <ClCompile Include="Graphics\RenderManager.cpp" />
     <ClCompile Include="Graphics\Sprite.cpp" />
     <ClCompile Include="Graphics\TextureUtil.cpp" />
+    <ClCompile Include="src\Audio\sound_utils\audio.c" />
+    <ClCompile Include="src\Audio\sound_utils\bgm.c" />
+    <ClCompile Include="src\Audio\sound_utils\media.c" />
+    <ClCompile Include="src\Audio\sound_utils\pgeWav.c" />
+    <ClCompile Include="src\Audio\sound_utils\vfsFile.c" />
+    <ClCompile Include="src\Audio\sound_utils\VirtualFile.c" />
+    <ClCompile Include="src\Graphics\RenderManager.cpp" />
+    <ClCompile Include="src\Graphics\Sprite.cpp" />
+    <ClCompile Include="src\Graphics\TextureUtil.cpp" />
+    <ClCompile Include="src\Graphics\vram.cpp" />
+    <ClCompile Include="src\System\Dialogs.cpp" />
+    <ClCompile Include="src\System\Input.cpp" />
+    <ClCompile Include="src\System\NetworkDriver.cpp" />
+    <ClCompile Include="src\System\Ram.cpp" />
+    <ClCompile Include="src\Utils\common.c" />
+    <ClCompile Include="src\Utils\Logger.cpp" />
+    <ClCompile Include="src\Utils\StateManager.cpp" />
+    <ClCompile Include="src\Utils\Timer.cpp" />
     <ClCompile Include="System\Dialogs.cpp" />
     <ClCompile Include="System\Input.cpp" />
     <ClCompile Include="System\NetworkDriver.cpp" />
@@ -125,6 +144,27 @@
     <ClInclude Include="Graphics\Texture.h" />
     <ClInclude Include="Graphics\TextureUtil.h" />
     <ClInclude Include="Graphics\Vertex.h" />
+    <ClInclude Include="include\Audio\sound_utils\audio.h" />
+    <ClInclude Include="include\Audio\sound_utils\bgm.h" />
+    <ClInclude Include="include\Audio\sound_utils\oslib.h" />
+    <ClInclude Include="include\Audio\sound_utils\pgeWav.h" />
+    <ClInclude Include="include\Audio\sound_utils\readwav.h" />
+    <ClInclude Include="include\Audio\sound_utils\VirtualFile.h" />
+    <ClInclude Include="include\Graphics\RenderManager.h" />
+    <ClInclude Include="include\Graphics\Sprite.h" />
+    <ClInclude Include="include\Graphics\Texture.h" />
+    <ClInclude Include="include\Graphics\TextureUtil.h" />
+    <ClInclude Include="include\Graphics\Vertex.h" />
+    <ClInclude Include="include\Graphics\vram.h" />
+    <ClInclude Include="include\System\Dialogs.h" />
+    <ClInclude Include="include\System\Input.h" />
+    <ClInclude Include="include\System\NetworkDriver.h" />
+    <ClInclude Include="include\System\Ram.h" />
+    <ClInclude Include="include\Utils\common.h" />
+    <ClInclude Include="include\Utils\GameState.h" />
+    <ClInclude Include="include\Utils\Logger.h" />
+    <ClInclude Include="include\Utils\StateManager.h" />
+    <ClInclude Include="include\Utils\Timer.hpp" />
     <ClInclude Include="Physics\AABB.h" />
     <ClInclude Include="System\Dialogs.h" />
     <ClInclude Include="System\Input.h" />
