@@ -5,7 +5,9 @@ namespace Shadow::System::Input {
 
 	SceCtrlData oldPadData;
 	SceCtrlData newPadData;
-
+/**
+  * Get input.
+**/
 	void InputUpdate()
 	{
 		//new to old
