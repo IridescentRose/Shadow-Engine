@@ -3,4 +3,4 @@ Shadow Engine is a basic game engine designed for the PSP, used most recently in
 
 Shadow is hardware-accelerated and uses the GPU with native sceGu calls to perform rendering. However, it does not use the Media Engine, and uses the VFPU sparingly.
 
-It is still being documented, and will continue to gain documentation through the next week.
+It is fully documented in code.
