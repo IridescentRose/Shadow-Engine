@@ -157,32 +157,6 @@ namespace Shadow
 			red = green = blue = alpha = 255;
 		}
 
-        void Sprite::SetMapPos(Texture* texture,int startW,int startH,int endW,int endH)
-		{
-			tex = texture;
-            free(vertices);
-			//generate wertices
-			vertices = (TexturedVertex*)memalign(16, 4 * sizeof(TexturedVertex) );
-
-			width = endW;
-			height = endH;
-
-			float hstart = (float)startH / (float)tex->pHeight;
-			float wstart = (float)startW / (float)tex->pWidth;
-			float hPercent = (float)(startH + endH) / (float)tex->pHeight;
-			float wPercent = (float)(startW + endW) / (float)tex->pWidth;
-
-			if( vertices )
-			{
-				vertices[0] = getVertex(wstart,hstart,0,0,0.0f);
-				vertices[1] = getVertex(wstart,hPercent,0,height,0.0f);
-				vertices[2] = getVertex(wPercent,hstart,width,0,0.0f);
-				vertices[3] = getVertex(wPercent,hPercent,width, height,0.0f);
-			}
-
-			//sceKernelDcacheWritebackInvalidateAll();
-			sceKernelDcacheWritebackInvalidateRange(vertices, 4 * sizeof(TexturedVertex));
-		}
 
 		Sprite::~Sprite()
 		{

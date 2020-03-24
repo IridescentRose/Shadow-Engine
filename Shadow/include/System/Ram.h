@@ -8,7 +8,13 @@
 
 namespace Shadow {
 	namespace System {
+		/**
+		* Gets the maximum available ram in bytes
+		*/
 		u32 ramAvailableMax(void);
+		/**
+		* Gets the current free ram in bytes
+		*/
 		u32 freeMemory(void);
 	}
 }

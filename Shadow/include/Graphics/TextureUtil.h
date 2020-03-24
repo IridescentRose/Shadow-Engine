@@ -21,9 +21,13 @@
 extern std::vector<std::string> texPacksEnabled;
 extern std::vector<std::string> texPacksDisabled;
 
+/**
+* A static class which loads textures
+*/
 class TextureUtil {
 public:
 
+	/** Internal */
 	static inline int powerOfTwo(int value) {
 		int poweroftwo = 1;
 		while (poweroftwo < value) {
@@ -32,6 +36,7 @@ public:
 		return poweroftwo;
 	}
 
+	/** Internal */
 	static inline unsigned short Color8888To5551(unsigned int Color32)
 	{
 		unsigned char Red = (Color32);
@@ -46,6 +51,7 @@ public:
 		return Color16;
 	}
 
+	/** Internal */
 	static inline unsigned short Color8888To4444(unsigned int Color32)
 	{
 		unsigned char Red = (Color32);
@@ -60,6 +66,7 @@ public:
 		return Color16;
 	}
 
+	/** Internal */
 	static inline unsigned short Color8888To5650(unsigned int Color32)
 	{
 		unsigned char Red = (Color32);
@@ -74,6 +81,7 @@ public:
 	}
 
 
+	/** Internal */
 	static inline void swizzle_fast(u8* out, const u8* in, unsigned int width, unsigned int height)
 	{
 		unsigned int blockx, blocky;
@@ -108,9 +116,15 @@ public:
 		}
 	}
 
+	/**
+	* Loads a PNG texture into RAM (by default) at the given path
+	* @param fileName - The file to load
+	* @param vram - Whether or not to allocate space in VRAM (off by default)
+	*/
 	static Texture* LoadPng(std::string fileName, bool vram = false);
+	
+	/** Internal */
 	static Texture* LoadPng(const char* filename, int ColorMode, int Swizzle, bool Vram);
+	/** Internal */
 	static Texture* LoadPngTexturePack(std::string filename, bool vram = false);
 };
-
-extern Texture* terrain_atlas;

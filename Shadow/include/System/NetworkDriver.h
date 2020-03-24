@@ -22,11 +22,24 @@
 namespace Shadow {
 	namespace System {
 		namespace Network {
+			/**
+			* Initializes libraries
+			*/
 			void Init();
 
+			/**
+			* Connects to your access point automatically
+			*/
 			bool autoConnect();
+
+			/**
+			* Connects to your access point with a GUI
+			*/
 			bool dialogConnect();
 
+			/**
+			* Cleans up libraries
+			*/
 			void Cleanup();
 		}
 	}

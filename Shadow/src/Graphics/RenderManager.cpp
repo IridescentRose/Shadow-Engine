@@ -6,10 +6,6 @@ namespace Shadow
 	namespace Graphics
 	{
 
-        void RenderManager::DrawCube(float x, float y, float z)
-        {
-        }
-
 		void RenderManager::Init()
 		{
 

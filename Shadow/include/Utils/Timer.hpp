@@ -5,24 +5,47 @@
 #include <stdio.h>
 #include <psprtc.h>
 
-namespace Shadow::Utils{
-class Timer {
-public:
-	Timer();
-	virtual ~Timer();
+namespace Shadow {
+	namespace Utils {
 
-	float deltaTime(void);
+		/**
+		* A simple utility timer
+		*/
+		class Timer {
+		public:
+			/**
+			* Starts a timer upon instantiation
+			*/
+			Timer();
 
-	float elapsed();
-	void reset();
+			/**
+			* Kills the timer
+			*/
+			virtual ~Timer();
 
-private:
-	double dt;
-	double total;
+			/**
+			* Gets the current time from last call (also updates elapsed!!!)
+			*/
+			float deltaTime(void);
 
-	u64 timeCurrent;
-	u64 timeLast;
+			/**
+			* Gets the elapsed time (make sure to call deltaTime to continue updating this)
+			*/
+			float elapsed();
 
-	u32 tickResolution;
-};
+			/**
+			* Reset the timer to 0
+			*/
+			void reset();
+
+		private:
+			double dt;
+			double total;
+
+			u64 timeCurrent;
+			u64 timeLast;
+
+			u32 tickResolution;
+		};
+	}
 }

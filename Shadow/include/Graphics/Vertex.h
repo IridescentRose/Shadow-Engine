@@ -4,17 +4,19 @@ namespace Shadow
 {
 	namespace Graphics
 	{
+
+		/**
+		* Defines a vertex with vertex colors (modulated) and XYZ coordinates
+		*/
 		typedef struct
 		{
 			unsigned int color;
 			float x,y,z;
 		}__attribute__((packed)) ColoredVertex;
 
-        typedef struct
-		{
-			float x,y,z;
-		}__attribute__((packed)) ColoredVertex2;
-
+		/**
+		* Defines a vertex with UV textures, vertex colors (modulated), and XYZ coordinates
+		*/
 		typedef struct
 		{
 			float u,v;
@@ -22,6 +24,9 @@ namespace Shadow
 			float x,y,z;
 		}__attribute__((packed)) Vertex;
 
+		/**
+		* Defines a vertex with UV textures, vertex colors (modulated), and packed XYZ coordinates
+		*/
 		typedef struct
 		{
 			float u,v;
@@ -29,28 +34,14 @@ namespace Shadow
 			unsigned char x,y,z;
 		}__attribute__((packed)) PackedVertex;
 
+		/**
+		* Defines a vertex with UV texture coordinates and XYZ coordinates
+		*/
 		typedef struct
 		{
 			float u,v;
 			float x,y,z;
 		}__attribute__((packed)) TexturedVertex;
 
-		typedef struct
-		{
-			unsigned short u, v;
-			short x, y, z;
-		}__attribute__((packed)) TexturedVertex16;
-
-		typedef struct
-		{
-			unsigned char u, v;
-			char x, y, z;
-		}__attribute__((packed)) TexturedVertex8;
-
-		struct MorphVertex
-		{
-			TexturedVertex v0;
-			TexturedVertex v1;
-		};
 	}
 }

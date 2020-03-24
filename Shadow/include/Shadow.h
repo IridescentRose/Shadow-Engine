@@ -5,6 +5,9 @@
 #include <Utils/common.h>
 
 namespace Shadow {
+	/**
+	* Initializes everything (including callbacks)
+	*/
 	inline void Init() {
 		SetupCallbacks();
 
@@ -18,6 +21,9 @@ namespace Shadow {
 		Graphics::g_RenderManager.InitDebugFont();
 	}
 
+	/**
+	* Cleans up the game engine
+	*/
 	inline void Cleanup() {
 		sceGuTerm();
 		oslDeinitAudio();

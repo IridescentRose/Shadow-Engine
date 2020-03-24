@@ -31,34 +31,91 @@ namespace Shadow
 {
 	namespace Graphics
 	{
+		/**
+		* The main rendering utility and frame manager
+		*/
 		class RenderManager
 		{
 		public:
-			float fovv;
-
+			
+			/**
+			* Initializes the sceGu library
+			*/
 			void Init();
+
+			/**
+			* Initializes and loads the font at "assets/font.pgf" alongside the PSP hardware backups.
+			*/
 			void InitDebugFont();
 			
+			/**
+			* Sets the font style, including size, color, shadows (broken), and accepts intrafont arguments. Angle is no longer used.
+			* @param size - The font size
+			* @param color - The GU_COLOR for the font
+			* @param shadowColor - The GU_COLOR for the font shadow (broken / corrupted)
+			* @param options - INTRAFONT options
+			* @param angle - Deprecated, set to 0.
+			*/
 			void SetFontStyle(float size, unsigned int color, unsigned int shadowColor, unsigned int options, float angle);
+
+			/**
+			* Equivalent to printf, but shows up graphically.
+			* @param x - X position
+			* @param y - Y position
+			* @param message - Your formatted string
+			* @param ... - Any other arguments
+			*/
 			void DebugPrint(int x,int y, const char *message, ...);
+
+			/**
+			* Clears the screen and buffers
+			*/
 			void CleanBuffers();
-			void DrawCube(float x, float y, float z);
 
-
+			/**
+			* Begins a frame
+			*/
 			void StartFrame();
+
+			/**
+			* Ends a frame
+			*/
 			void EndFrame();
 
-			//dialogs rendering
+
+			/**
+			* Begins a dialog frame
+			*/
 			void StartDialog();
+
+			/**
+			* Ends a dialog frame
+			*/
 			void EndDialog();
 
+			/**
+			* Sets the clear color of the screen
+			*/
 			void SetClearColor(float r,float g,float b,float a);
 
+			/**
+			* Sets to standard orthographic mode, with 0, 0 being the top left corner.
+			*/
 			void SetOrtho();
+
+			/**
+			* Used to set the perspective matrix
+			*/
 			void SetPerspective(float _fov,float _aspect,float _znear,float _zfar);
 			
+			/**
+			* Render to texture (untested)
+			*/
 			void DrawToTexture(Texture* offscreenTexture );
 
+			/**
+			*	Sets clear color to the GU_COLOR
+			*/
 			void SetClearColour(unsigned int color);
 
 
@@ -69,6 +126,7 @@ namespace Shadow
 
 		private:
 			unsigned int cleanColor;
+			float fovv;
 
             void* _fbp0;
 			void* _fbp1;
@@ -114,6 +172,9 @@ namespace Shadow
 
 		};
 
+		/**
+		* The global render manager instance
+		*/
 		extern RenderManager g_RenderManager;
 	}
 
