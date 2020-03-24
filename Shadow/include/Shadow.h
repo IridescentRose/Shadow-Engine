@@ -4,6 +4,9 @@
 #include <Graphics/RenderManager.h>
 #include <Utils/common.h>
 
+/** \addtogroup Shadow Core
+ *  @{
+ */
 namespace Shadow {
 	/**
 	* Initializes everything (including callbacks)
@@ -30,3 +33,4 @@ namespace Shadow {
 		sceKernelExitGame();
 	}
 }
+/** @} */

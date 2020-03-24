@@ -9,7 +9,7 @@ extern "C" {
 #endif
 #include "VirtualFile.h"
 
-/** @defgroup audio Audio
+/** \addtogroup audio Audio
 
 	Audio in OSLib.
 	@{
@@ -89,7 +89,7 @@ typedef struct		{
 } OSL_AUDIO_VOICE;
 
 
-/** @defgroup audio_general General
+/** \addtogroup audio_general General
 
 	General tasks for audio.
 	@{
@@ -127,7 +127,7 @@ extern int osl_audioDefaultNumSamples;
 /** @} */ // end of audio_general
 
 
-/** @defgroup audio_load Loading
+/** \addtogroup audio_load Loading
 
 	Loading sounds.
 	@{
@@ -204,7 +204,7 @@ void oslSetModSampleRate(int freq, int stereo, int shift);
 /** @} */ // end of audio_load
 
 
-/** @defgroup audio_play Player
+/** \addtogroup audio_play Player
 
 	Audio player.
 	@{
@@ -301,7 +301,7 @@ enum oslInitAudioME_formats		{
 
 
 
-/** @defgroup audio_adv Advanced
+/** \addtogroup audio_adv Advanced
 
 	Lower level work with active audio channels.
 	@{

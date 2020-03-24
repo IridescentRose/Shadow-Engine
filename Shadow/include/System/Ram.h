@@ -6,6 +6,9 @@
 #include <string.h>
 #define RAM_BLOCK      (1024 * 1024)
 
+/** \defgroup System Library
+ *  @{
+ */
 namespace Shadow {
 	namespace System {
 		/**
@@ -18,3 +21,4 @@ namespace Shadow {
 		u32 freeMemory(void);
 	}
 }
+/** @} */

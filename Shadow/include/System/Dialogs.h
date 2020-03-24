@@ -5,7 +5,9 @@
 #include <psputility.h>
 #include <string.h>
 #include <Graphics/RenderManager.h>
-
+/** \addtogroup System Library
+ *  @{
+ */
 namespace Shadow{
 	namespace System {
 		namespace Dialogs {
@@ -41,3 +43,5 @@ namespace Shadow{
 		}
 	}
 }
+/** @}
+*/

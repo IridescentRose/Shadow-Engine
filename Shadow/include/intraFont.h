@@ -20,7 +20,7 @@ extern "C" {
 
 #include "libccc.h"
 
-/** @defgroup intraFont Font Library
+/** \addtogroup intraFont Font Library
  *  @{
  */
 

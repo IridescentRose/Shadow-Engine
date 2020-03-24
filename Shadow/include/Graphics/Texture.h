@@ -10,6 +10,10 @@
 #include <pspdisplay.h>
 #include <math.h>
 
+/** \addtogroup Graphics Library
+ *  @{
+ */
+
 /**
 * The "texture object" class
 */
@@ -273,3 +277,5 @@ public:
 			free(data);
 	}
 };
+
+/** @} */

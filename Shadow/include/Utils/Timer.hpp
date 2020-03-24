@@ -5,6 +5,9 @@
 #include <stdio.h>
 #include <psprtc.h>
 
+/** \defgroup Util Library
+ *  @{
+ */
 namespace Shadow {
 	namespace Utils {
 
@@ -49,3 +52,4 @@ namespace Shadow {
 		};
 	}
 }
+/** @} */

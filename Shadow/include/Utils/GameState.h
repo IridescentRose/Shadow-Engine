@@ -1,7 +1,9 @@
 #pragma once
 
 #include <Utils/StateManager.h>
-
+/** \addtogroup Util Library
+ *  @{
+ */
 namespace Shadow
 {
 	namespace Utils
@@ -61,3 +63,4 @@ namespace Shadow
 		};
 	}
 }
+/** @} */

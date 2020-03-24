@@ -2,6 +2,10 @@
 #include <string>
 #include <Graphics/Vertex.h>
 #include <Graphics/Texture.h>
+
+/** \addtogroup Graphics Library
+ *  @{
+ */
 namespace Shadow
 {
 	namespace Graphics
@@ -135,3 +139,5 @@ namespace Shadow
 	}
 
 }
+
+/** @} */

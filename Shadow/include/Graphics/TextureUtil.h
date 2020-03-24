@@ -21,6 +21,9 @@
 extern std::vector<std::string> texPacksEnabled;
 extern std::vector<std::string> texPacksDisabled;
 
+/** \defgroup Graphics Library
+ *  @{
+ */
 /**
 * A static class which loads textures
 */
@@ -128,3 +131,4 @@ public:
 	/** Internal */
 	static Texture* LoadPngTexturePack(std::string filename, bool vram = false);
 };
+/** @} */

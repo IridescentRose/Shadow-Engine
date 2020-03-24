@@ -14,7 +14,7 @@
 extern "C" {
 #endif
 
-/** @defgroup pgeWav WAV Library
+/** \addtogroup pgeWav WAV Library
  *  @{
  */
 

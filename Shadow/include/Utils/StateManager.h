@@ -1,6 +1,9 @@
 #pragma once
 #include <vector>
 
+/** \addtogroup Util Library
+ *  @{
+ */
 namespace Shadow
 {
 	namespace Utils
@@ -49,3 +52,4 @@ namespace Shadow
 		extern StateManager g_StateManager;
 	}
 }
+/** @} */

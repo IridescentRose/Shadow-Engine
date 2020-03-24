@@ -12,7 +12,9 @@ namespace std {
 	}
 }
 
-
+/** \addtogroup Util Library
+ *  @{
+ */
 namespace Shadow {
 	namespace Utils {
 
@@ -68,3 +70,4 @@ namespace Shadow {
 		extern Logger* g_Logger;
 	}
 }
+/** @} */

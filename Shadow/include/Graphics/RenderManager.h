@@ -27,6 +27,10 @@
 #define SCR_WIDTH (480)
 #define SCR_HEIGHT (272)
 
+/** \addtogroup renderer Graphics Library
+ *  @{
+ */
+
 namespace Shadow
 {
 	namespace Graphics
@@ -179,3 +183,5 @@ namespace Shadow
 	}
 
 }
+
+/** @} */

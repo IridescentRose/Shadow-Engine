@@ -5,7 +5,9 @@
 #include <pspctrl.h>
 #include <psputility.h>
 #include <string.h>
-
+/** \addtogroup System Library
+ *  @{
+ */
 namespace Shadow {
 	namespace System {
 		namespace Input {
@@ -37,3 +39,4 @@ namespace Shadow {
 		}
 	}
 }
+/** @} */

@@ -1,7 +1,9 @@
 #pragma once
 #include <Audio/sound_utils/audio.h>
 #include <string>
-
+/** \addtogroup audioclip Audio Library
+ *  @{
+ */
 namespace Shadow{
 	namespace Audio {
 
@@ -60,3 +62,4 @@ namespace Shadow{
 		};
 	}
 }
+/** @} */

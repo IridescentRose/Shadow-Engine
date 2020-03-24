@@ -19,6 +19,9 @@
 #include <unistd.h> 
 #include <queue>
 
+/** \addtogroup System Library
+ *  @{
+ */
 namespace Shadow {
 	namespace System {
 		namespace Network {
@@ -44,3 +47,4 @@ namespace Shadow {
 		}
 	}
 }
+/** @} */

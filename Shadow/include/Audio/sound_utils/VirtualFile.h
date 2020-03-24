@@ -13,7 +13,7 @@ extern "C" {
 
 #include <stdlib.h>
 #include <stdint.h>
-/** @defgroup virtualfile Virtual Files
+/** \addtogroup virtualfile Virtual Files
 
 	Virtual File support for OSLib.
 	This API is meant to be an universal mean to manipulate every file source possible as you can define your own.
@@ -147,7 +147,7 @@ VIRTUAL_FILE *VirtualFileOpen(void *param1, int param2, int type, int mode);
 int VirtualFileClose(VIRTUAL_FILE *f);
 
 
-/** @defgroup virtualfile_io I/O routines
+/** \addtogroup virtualfile_io I/O routines
 
 	Routines for reading / writing to a virtual file. Make sure to check the Virtual File main page to know how to open files, etc.
 	@{
@@ -249,7 +249,7 @@ extern VIRTUAL_FILE_SOURCE vfsMemory;
 
 
 
-/** @defgroup virtualfile_sources Virtual file sources
+/** \addtogroup virtualfile_sources Virtual file sources
 
 	There are two virtual file sources available by default: memory and file.
 	@{
@@ -280,7 +280,7 @@ extern int VF_FILE;
 /** @} */ // end of virtualfile_sources
 
 
-/** @defgroup virtualfile_ram RAM virtual files
+/** \addtogroup virtualfile_ram RAM virtual files
 
 	There are two virtual file sources available by default: memory and file.
 	@{
