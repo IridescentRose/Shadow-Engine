@@ -23,7 +23,7 @@ alib = lib/libshadow.a
 
 INCDIR = $(PSPPATH)/include
 INCDIR += ./include ./libs/include
-CFLAGS = -O3 -g3 -mpreferred-stack-boundary=4 -ffast-math -gdwarf-2
+CFLAGS = -O3 -g3 -mpreferred-stack-boundary=4 -ffast-math -gdwarf-2 -DMC_PSP
 CXXFLAGS = -std=gnu++17 -fno-rtti -fno-exceptions
 ASFLAGS = $(CFLAGS)
 
@@ -33,7 +33,7 @@ PSP_LARGE_MEMORY = 0
 
 LIBDIR += ./libs/lib/
 LDFLAGS =
-LIBS=-lpng -lintraFont -lpspaudiolib -lpspaudio -lpspaudiocodec -lz -lpspgum -lpspgu -lstdc++ -lpsprtc -lpspctrl -lm -lpspvfpu -lpspsdk -lpsppower -lpsphttp -lpspmath  #Intrafont, PNG, Zlib, JSON, etc.
+LIBS=-lintraFont -lpng -lintraFont -lpspaudiolib -lpspaudio -lpspaudiocodec -lz -lpspgum -lpspgu -lstdc++ -lpsprtc -lpspctrl -lm -lpspvfpu -lpspsdk -lpsppower -lpsphttp -lpspmath  #Intrafont, PNG, Zlib, JSON, etc.
 
 $(alib): $(OBJS)
 	$(AR) rcs $@ $^
